@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image to Story Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Image to Story Generator</h1>
+        <p>Upload an image and let the AI write a caption and a short story about it.</p>
+        <form id="upload-form">
+            <input type="file" id="image-input" name="file" accept="image/*" required>
+            <button type="submit">Generate Story</button>
+        </form>
+        <div id="loader" class="loader" style="display:none;"></div>
+        <div id="results" class="results-container" style="display:none;">
+            <h2>Generated Content</h2>
+            <div class="result-box">
+                <h3>Caption</h3>
+                <p id="caption-output"></p>
+            </div>
+            <div class="result-box">
+                <h3>Story</h3>
+                <p id="story-output"></p>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
